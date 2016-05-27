@@ -1,0 +1,12 @@
+**Expressjs Handlebars as View Engines**
+
+Usually the idea is to able to generate portions of HTML on the fly as pages are requested,
+perhaps using loops, conditional statements, data-driven content and so forth. In order to
+render dynamic HTML pages, one requires a rendering engine. This is where Handlebars come in.
+The rendering engine is so-named bcos of the syntax it uses to display data, namely {{}}.
+Using handlebars, sections of the HTML code are only determined at runtime. For example:
+
+<div>
+    <p>Hello there {{name}}! Today's date is {{timestamp}}</p>
+</div>
+

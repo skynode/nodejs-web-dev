@@ -1,0 +1,65 @@
+										<!--the general home page view-->
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			upload an image
+		</h3>
+	</div>
+	<!--the FORM Method below (POST), encoding type and corresponding action route (/images) matches the listening route set up in /server/routes.js-->
+	<form method="post" action="/images" enctype="multipart/form-data">
+		<div class="panel-body form-horizontal">
+			<div class="form-group col-md-12">
+				<label class="col-sm-2 control-label"
+				for="file"> browse:</label>
+				<!--standard html input field for uploading files-->
+				<div class="col-md-10">
+					<input class="form-control" type="file" name="file" id="file">
+				</div>
+			</div>
+			<div class="form-group col-md-12">
+				<label class="col-md-2 control-label"
+				for="title"> title:</label>
+				<div class="col-md-10">
+					<input class="form-control" type="text"
+					name="title">
+				</div>
+			</div>
+			<div class="form-group col-md-12">
+				<label class="col-md-2 control-label"
+				for="description">description:</label>
+				<div class="col-md-10">
+					<textarea class="form-control"
+					name="description" rows="2"></textarea>
+				</div>
+			</div>
+			<div class="form-group col-md-12">
+				<div class="col-md-12 text-right">
+					<!--Bootstrap classes used here to imbue HTML button with Bootstrap look and feel. Greetz: Twitter Inc.-->
+					<button type="submit" id="login-btn"
+					class="btn btn-success" type="button">
+					<i class="fa fa-cloud-upload ">
+					</i>upload image</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<!--after the form upload section, we display a list of the newest images uploaded to the website. The 'each' block in the code snippet is a keyword supported by handlebars to loop over data provided to the template in the case of reusable html blocks-->
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			recent images		 
+		</h3>
+	</div>
+	<div class="panel-body">
+	<!--handlebars template context-->
+		{{#each images}}
+			<div class="col-md-4 text-center" style="padding-bottom:1em;">
+			 	<a href="/images/{{uniqueId}}">
+			 		<img src="/public/upload/{{filename}}" alt="{{title}}"
+			 		 style="width:175px; height:175px" class="img-thumbnail">
+			 	</a>
+			 </div>
+		{{/each}}
+	</div>
+</div>

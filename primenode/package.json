@@ -1,0 +1,24 @@
+{
+  "name": "primenode",
+  "version": "1.0.0",
+  "description": "prime node.js-mongodb project to test out image/file uplink capabilities",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "skynode",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "fs": "0.0.2",
+    "method-override": "^2.3.5",
+    "moment": "^2.13.0",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "path": "^0.12.7"
+  }
+}

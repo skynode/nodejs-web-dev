@@ -1,0 +1,54 @@
+						<!--main.hbs defines a consistent UI wrapper across appX-->
+						
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>appX.io</title>
+		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/public/css/styles.css">
+	</head>
+	<body>
+		<div class="page-header">
+			<div class="container">
+				<div class="col-sm-6">
+					<h1><a href="/">appx.io</a></h1>
+				</div>			
+			</div>		
+		</div>
+		<div class="container">
+			<div class="row">			
+				 <div class="col-sm-8">
+				 	{{{body}}}
+				 </div>
+				 <div col-sm-4>
+				 <!--handlebars partials-->
+				 	{{>stats this}}
+
+				 	{{>popular this}}
+
+				 	{{>comments this}}
+				 </div>
+			</div>		
+		</div>
+		<div style="border-top: solid 1px #eee; padding-top: 1em;">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<p class="text-muted">appx.io | &copy; copyright 2016, all rights reserved.</p>
+						<p class="text-center">
+							<i class="fa fa-twitter-square fa-2x text-primary"></i>
+							<i class="fa fa-facebook-square fa-2x text-primary"></i>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--important that the script tags and their content are at the bottom of main.hbs; so that they are the last to load ensuring that the document has already been fully downloaded and is ready to be manipulated-->
+		
+		<!--exteral jQuery script from Google's code content delivery network-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<!--internal jQuery script-->
+		<script type="text/javascript" src="/public/js/scripts.js"></script>
+	</body>
+</html>
