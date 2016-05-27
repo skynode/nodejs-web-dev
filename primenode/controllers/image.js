@@ -69,7 +69,7 @@ module.exports = {
 			for(var i=0; i<8; i++){
 				//loop thru population, appending a character to imgUrl on each cycle
 				imgUrl += population.charAt(Math.floor(Math.random() * population.length));
-			}
+			}            
 			var tempPath = req.file.path,
 				ext = _path.extname(req.file.originalname).toLowerCase(),
 				permPath = _path.resolve('./public/upload/' + imgUrl + ext);
@@ -85,7 +85,7 @@ module.exports = {
 				_fs.unlink(tempPath, function(){
 					if(error)
 						throw error;
-					res.json(500, {error: 'only image files are allowed'}); //deprecated
+					res.status(500).json({error: 'only image files are allowed'}); 
 				});
 			}		
 		}; 
